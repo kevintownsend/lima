@@ -7,3 +7,12 @@ cc_library(
     deps = ["@boost//:algorithm"],
     visibility = ["//main:__pkg__"],
 )
+
+cc_test(
+    name = "lima_cpu_lib_test",
+    srcs = ["lima_cpu_lib_test.cc"],
+    deps = [
+        ":lima_cpu_lib",
+        "@com_google_googletest//:gtest_main",
+        ],
+)
