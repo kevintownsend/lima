@@ -16,3 +16,9 @@ cc_test(
         "@com_google_googletest//:gtest_main",
         ],
 )
+
+cc_binary(
+    name = "lima_cpu",
+    srcs = ["lima_cpu.cc"],
+    deps = [":lima_cpu_lib"],
+)
