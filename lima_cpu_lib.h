@@ -5,6 +5,8 @@
 #include <vector>
 #include <boost/multiprecision/cpp_int.hpp>
 
+const extern uint64_t BASE_BITS;
+
 std::vector<uint64_t> convert(boost::multiprecision::cpp_int value, int bitwidth = 64);
 
 // TODO: multiply
