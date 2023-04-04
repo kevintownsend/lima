@@ -22,4 +22,11 @@ TEST(MULTIPLY, SINGLE_VALUE) {
   EXPECT_EQ(result, std::vector<uint64_t>({4}));
 }
 
+TEST(MULTIPLY, MULTI_VALUE) {
+  std::vector<uint64_t> result({0, 0, 0});
+  std::vector<uint64_t> operand({2,3});
+  multiply(operand, result);
+  EXPECT_EQ(result, std::vector<uint64_t>({4, 12, 9}));
+}
+
 }
