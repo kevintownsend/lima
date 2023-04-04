@@ -21,6 +21,14 @@ std::vector<uint64_t> convert(boost::multiprecision::cpp_int value, int bitwidth
   return ret;
 }
 
+boost::multiprecision::cpp_int to_cpp_int(std::vector<uint64_t> value, int bitwidth) {
+  boost::multiprecision::cpp_int ret = 0;
+  for(int i = 0; i < value.size(); i++) {
+    ret += boost::multiprecision::cpp_int(value[i]) << (i*bitwidth);
+  }
+  return ret;
+}
+
 void multiply(std::vector<uint64_t> &operand, std::vector<uint64_t> &result){
   std::fill(result.begin(), result.end(), 0);
   uint64_t operand_size = operand.size();
