@@ -15,6 +15,12 @@ void multiply(std::vector<uint64_t> &operand, std::vector<uint64_t> &result);
 
 // TODO: modulo
 
+void module(std::vector<uint64_t> &operand, std::vector<uint64_t> &result, std::vector<std::vector<uint64_t> > multipliers);
+
+// TODO: calculate vector.
+
+std::vector<std::vector<uint64_t> > calculate_multipliers(boost::multiprecision::cpp_int value);
+
 // TODO: loop
 
 #endif // LIMA_CPU_LIB_H_

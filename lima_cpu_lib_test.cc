@@ -29,4 +29,10 @@ TEST(MULTIPLY, MULTI_VALUE) {
   EXPECT_EQ(result, std::vector<uint64_t>({4, 12, 9}));
 }
 
+TEST(MODULE, SINGLE_VALUE) {
+  //std::vector<uint64_t> 
+}
+
+TEST(CALCULATE_MULTIPLIERS, SMALL) {
+}
 }
