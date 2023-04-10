@@ -49,3 +49,7 @@ void multiply(std::vector<uint64_t> &operand, std::vector<uint64_t> &result){
 
   // TODO: complete.
 }
+
+std::vector<std::vector<uint64_t> > calculate_multipliers(boost::multiprecision::cpp_int value){
+  return std::vector<std::vector<uint64_t> >();
+}
