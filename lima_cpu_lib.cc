@@ -50,6 +50,29 @@ void multiply(std::vector<uint64_t> &operand, std::vector<uint64_t> &result){
   // TODO: complete.
 }
 
-std::vector<std::vector<uint64_t> > calculate_multipliers(boost::multiprecision::cpp_int value){
-  return std::vector<std::vector<uint64_t> >();
+std::vector<std::vector<uint64_t> > calculate_multipliers(boost::multiprecision::cpp_int value, int N){
+  std::vector<std::vector<uint64_t> > ret;
+
+  boost::multiprecision::cpp_int power = 1;
+  power <<= N*BASE_BITS;
+  for(int i = 0; i < N + 2; i++) {
+    boost::multiprecision::cpp_int multiplier = power % value;
+    ret.push_back(convert(multiplier, BASE_BITS));
+    power <<= BASE_BITS;
+  }
+
+  return ret;
 }
+
+std::vector<std::vector<uint64_t> > calculate_multipliers(boost::multiprecision::cpp_int value){
+  boost::multiprecision::cpp_int power = 1;
+  int i = 0;
+  while(power < value) {
+    power <<= BASE_BITS;
+    i++;
+  }
+  // TODO: assert N == i;
+
+  return calculate_multipliers(value, i);
+}
+

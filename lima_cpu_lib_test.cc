@@ -36,5 +36,6 @@ TEST(MODULE, SINGLE_VALUE) {
 TEST(CALCULATE_MULTIPLIERS, SMALL) {
   //boost::multiprecision::cpp_int();
   auto result = calculate_multipliers(42);
+
 }
 }
