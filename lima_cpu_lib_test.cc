@@ -36,6 +36,7 @@ TEST(MODULE, SINGLE_VALUE) {
 TEST(CALCULATE_MULTIPLIERS, SMALL) {
   //boost::multiprecision::cpp_int();
   auto result = calculate_multipliers(42);
+  EXPECT_EQ(result[0], std::vector<uint64_t>({4, 0, 0}));
 
 }
 }

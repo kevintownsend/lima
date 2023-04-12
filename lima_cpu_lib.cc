@@ -22,6 +22,13 @@ std::vector<uint64_t> convert(boost::multiprecision::cpp_int value, int bitwidth
   return ret;
 }
 
+std::vector<uint64_t> pad(std::vector<uint64_t> value, int padding) {
+  while(value.size() < padding) {
+    value.push_back(0);
+  }
+  return value;
+}
+
 boost::multiprecision::cpp_int to_cpp_int(std::vector<uint64_t> value, int bitwidth) {
   boost::multiprecision::cpp_int ret = 0;
   for(int i = 0; i < value.size(); i++) {
@@ -57,7 +64,7 @@ std::vector<std::vector<uint64_t> > calculate_multipliers(boost::multiprecision:
   power <<= N*BASE_BITS;
   for(int i = 0; i < N + 2; i++) {
     boost::multiprecision::cpp_int multiplier = power % value;
-    ret.push_back(convert(multiplier, BASE_BITS));
+    ret.push_back(pad(convert(multiplier, BASE_BITS), N+2));
     power <<= BASE_BITS;
   }
 
