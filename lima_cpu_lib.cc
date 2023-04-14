@@ -83,3 +83,21 @@ std::vector<std::vector<uint64_t> > calculate_multipliers(boost::multiprecision:
   return calculate_multipliers(value, i);
 }
 
+void modulo(std::vector<uint64_t> &operand, std::vector<uint64_t> &result, std::vector<std::vector<uint64_t> > &multipliers, int N){
+  // TODO: from 2N+1 to N (N+1)
+  // multiply result value by multiplier
+  // add values to result.
+  //for(int i = 2*N+1; i > N; i--) {
+  for(int i = 0; i < N+2; i++) {
+    // TODO: clear result.
+    uint64_t old_result = result[2 * N + 2 - i];
+    result[2 * N + 2 - i] = 0;
+    for(int j = 0; j < N; j++) {
+      uint64_t product = old_result * multipliers[N + 2 - i][j];
+      result[j+1] += product >> BASE_BITS;
+      result[j] += product & BASE_MASK;
+    }
+  }
+  // TODO: normalize.
+  // TODO: assert small N+1 value.
+}

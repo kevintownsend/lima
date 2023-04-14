@@ -15,7 +15,7 @@ void multiply(std::vector<uint64_t> &operand, std::vector<uint64_t> &result);
 
 // TODO: modulo
 
-void module(std::vector<uint64_t> &operand, std::vector<uint64_t> &result, std::vector<std::vector<uint64_t> > multipliers);
+void modulo(std::vector<uint64_t> &operand, std::vector<uint64_t> &result, std::vector<std::vector<uint64_t> > multipliers);
 
 // TODO: calculate vector.
 
