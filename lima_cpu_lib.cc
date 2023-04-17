@@ -94,6 +94,7 @@ void modulo(std::vector<uint64_t> &operand, std::vector<uint64_t> &result, std::
     result[2 * N + 2 - i] = 0;
     for(int j = 0; j < N; j++) {
       uint64_t product = old_result * multipliers[N + 2 - i][j];
+      // TODO: skip and do in the normalize step.
       result[j+1] += product >> BASE_BITS;
       result[j] += product & BASE_MASK;
     }
