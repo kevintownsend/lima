@@ -32,7 +32,7 @@ TEST(MULTIPLY, MULTI_VALUE) {
 TEST(MODULE, SINGLE_VALUE) {
   auto multipliers = calculate_multipliers(42);
   std::vector<uint64_t> result({1, 2, 3, 4});
-  //modulo(result, result, multipliers);
+  //modulo(result, result, multipliers, 1);
 }
 
 TEST(CALCULATE_MULTIPLIERS, SMALL) {
